@@ -10,9 +10,8 @@ connection = sqlite3.connect('horses-sqlite.db')
 
 cursor = connection.cursor()
 
-cursor.execute('''CREATE TABLE IF NOT EXISTS Horses 
-(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, 
-    breed TEXT, height REAL, birthday TEXT)''')
+table_str= "CREATE TABLE IF NOT EXISTS Horses (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, breed TEXT, height REAL, birthday TEXT)"
+cursor.execute(table_str)
 
 usersToInsert = [('Babe', 'Quarter Horse',15.3,'2015-02-10')]
 
